@@ -1,0 +1,15 @@
+*.apk
+*.aab
+*.apks
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+local.properties
+build/
+dist/
+release/
+signing/
+secrets/
+private/
