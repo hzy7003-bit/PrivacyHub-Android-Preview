@@ -4,11 +4,11 @@
 
 ## 下载
 
-当前测试版：`v0.9.0-beta`
+当前测试版：`v0.9.1-beta`
 
 请到 Releases 下载 APK：
 
-[下载 PrivacyHub-v0.9.0-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.0-beta)
+[下载 PrivacyHub-v0.9.1-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.1-beta)
 
 ## 核心功能
 
@@ -18,6 +18,7 @@
 - 链接净化：移除常见追踪参数
 - 通知栏保存：复制文本后通过通知栏按钮保存到本地
 - 控制中心磁贴：在支持的系统上快速保存剪切板文本
+- 最近保存：在首页快速进入按时间排序的保存列表
 - 本地诊断报告：方便离线反馈 ROM 兼容问题
 
 ## 隐私设计
