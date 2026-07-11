@@ -4,17 +4,20 @@
 
 ## 下载
 
-当前测试版：`v0.9.1-beta`
+当前测试版：`v0.9.4-beta`
 
 请到 Releases 下载 APK：
 
-[下载 PrivacyHub-v0.9.1-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.1-beta)
+[下载 PrivacyHub-v0.9.4-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.4-beta)
+
+SHA-256：`E93A340EDDE0061CC1705B24B5059D375CDF832C5FFFF3C9D89E3CF928AEF579`
 
 ## 核心功能
 
 - 分享链接中转：从微信、QQ、浏览器、备忘录等 App 分享文本到隐私中转站
 - 本地安全箱：保存链接、文本、口令、地址、备注等内容
 - 链接识别：购物、内容平台、网盘链接
+- 淘宝闪购代付：识别代付口令或链接并打开淘宝官方代付页
 - 链接净化：移除常见追踪参数
 - 通知栏保存：复制文本后通过通知栏按钮保存到本地
 - 控制中心磁贴：在支持的系统上快速保存剪切板文本
