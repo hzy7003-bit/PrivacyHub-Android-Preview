@@ -4,13 +4,13 @@
 
 ## 下载
 
-当前测试版：`v0.9.4-beta`
+当前测试版：`v0.9.25-beta`
 
 请到 Releases 下载 APK：
 
-[下载 PrivacyHub-v0.9.4-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.4-beta)
+[下载 PrivacyHub-v0.9.25-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.25-beta)
 
-SHA-256：`E93A340EDDE0061CC1705B24B5059D375CDF832C5FFFF3C9D89E3CF928AEF579`
+SHA-256：`998F5DED9899E47746E985249059DBEF32ED23498F380EED0216450345AB6EF0`
 
 ## 核心功能
 
@@ -23,6 +23,9 @@ SHA-256：`E93A340EDDE0061CC1705B24B5059D375CDF832C5FFFF3C9D89E3CF928AEF579`
 - 控制中心磁贴：在支持的系统上快速保存剪切板文本
 - 最近保存：在首页快速进入按时间排序的保存列表
 - 本地诊断报告：方便离线反馈 ROM 兼容问题
+- Pro 系统自动填充：由用户主动选择本地保存的账号资料，填入支持 Android Autofill 的登录表单
+- Pro 网盘提取码辅助：由用户主动开启后，在浏览器页面执行一次性提取码填入
+- Pro 加密离线备份：支持本机恢复和跨设备迁移，不依赖云端
 
 ## 隐私设计
 
@@ -37,6 +40,8 @@ SHA-256：`E93A340EDDE0061CC1705B24B5059D375CDF832C5FFFF3C9D89E3CF928AEF579`
 ## 权限说明
 
 当前 APK 不包含网络权限。已使用的权限主要用于通知栏入口、开机后恢复用户主动开启的通知入口、生物识别和前台服务。
+
+公开 Release APK 已启用 R8 代码混淆、压缩和资源收缩，并使用独立发布证书签名。
 
 详见：[隐私与权限说明](docs/Privacy.md)
 
