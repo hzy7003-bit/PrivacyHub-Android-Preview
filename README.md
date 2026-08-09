@@ -4,13 +4,13 @@
 
 ## 下载
 
-当前测试版：`v0.9.25-beta`
+当前测试版：`v0.9.27-beta`
 
 请到 Releases 下载 APK：
 
-[下载 PrivacyHub-v0.9.25-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.25-beta)
+[下载 PrivacyHub-v0.9.27-beta-release.apk](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.27-beta)
 
-SHA-256：`998F5DED9899E47746E985249059DBEF32ED23498F380EED0216450345AB6EF0`
+SHA-256：`36EEE6449DD6300C02E4924B4826F2983B869CAB9258C86DDD6F5E38E6C31EF6`
 
 ## 核心功能
 
@@ -18,6 +18,7 @@ SHA-256：`998F5DED9899E47746E985249059DBEF32ED23498F380EED0216450345AB6EF0`
 - 本地安全箱：保存链接、文本、口令、地址、备注等内容
 - 链接识别：购物、内容平台、网盘链接
 - 淘宝闪购代付：识别代付口令或链接并打开淘宝官方代付页
+- 淘宝短链：支持 `m.tb.cn`、`e.tb.cn` 等商品或代付短链
 - 链接净化：移除常见追踪参数
 - 通知栏保存：复制文本后通过通知栏按钮保存到本地
 - 控制中心磁贴：在支持的系统上快速保存剪切板文本
@@ -26,6 +27,13 @@ SHA-256：`998F5DED9899E47746E985249059DBEF32ED23498F380EED0216450345AB6EF0`
 - Pro 系统自动填充：由用户主动选择本地保存的账号资料，填入支持 Android Autofill 的登录表单
 - Pro 网盘提取码辅助：由用户主动开启后，在浏览器页面执行一次性提取码填入
 - Pro 加密离线备份：支持本机恢复和跨设备迁移，不依赖云端
+
+## Pro 功能
+
+- 离线永久 License 与设备绑定
+- 加密离线备份和跨设备恢复
+- Android 系统自动填充 Beta
+- 网盘提取码辅助 Beta（需用户主动开启专用无障碍服务）
 
 ## 隐私设计
 
@@ -50,6 +58,8 @@ SHA-256：`998F5DED9899E47746E985249059DBEF32ED23498F380EED0216450345AB6EF0`
 Android 厂商 ROM 对后台通知、剪切板读取、控制中心磁贴的限制不同。部分功能需要用户在系统设置中允许通知、自启动或后台运行。
 
 详见：[已知问题](docs/KnownIssues.md)
+
+项目当前能力与验证边界：[项目进度](docs/ProjectStatus.md)
 
 ## 仓库说明
 
