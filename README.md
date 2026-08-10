@@ -4,6 +4,8 @@
 
 一个由用户主动触发、默认离线运行的 Android 隐私中转工具。即使关闭购物、内容和网盘 App 的剪贴板读取能力，也能通过系统分享或通知栏入口保存、识别并打开收到的链接和口令。
 
+> **Privacy Hub for Android** is a local-first, offline privacy app for securely receiving, storing and routing shared links or text without granting shopping and content apps clipboard access. It ships without Internet permission, ads, analytics or cloud sync.
+
 **[下载最新版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/latest)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
 
 > 当前公开测试版：`v0.9.27-beta`。公测包使用独立正式证书签名；已安装 Debug 包的设备不能直接覆盖安装 Release 包。
@@ -75,6 +77,7 @@ Android 10+ 和不同厂商 ROM 会限制后台剪贴板读取、通知常驻、
 
 - 遇到异常：提交 [Bug 报告](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/issues/new/choose)。
 - ROM 行为不同：提交兼容性报告，诊断截图中不要包含安全箱正文。
+- 愿意协助实机测试：查看 [ROM 兼容性测试征集](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/issues?q=is%3Aissue+label%3A%22help+wanted%22)。
 - 想参与讨论：进入 [Discussions](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/discussions)。
 
 如果这个项目解决了你的实际问题，可以点一个 Star。它用于关注版本、兼容性和隐私设计更新，不影响任何 App 功能。
