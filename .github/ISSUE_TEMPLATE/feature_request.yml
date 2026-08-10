@@ -1,0 +1,30 @@
+name: 功能建议
+description: 描述希望解决的真实使用问题
+title: "[建议] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你遇到的问题
+      description: 请先描述场景和困难，不要只写功能名称。
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: 期望的使用流程
+      placeholder: 从用户开始操作到完成目标，按顺序描述。
+    validations:
+      required: true
+  - type: textarea
+    id: permissions
+    attributes:
+      label: 可能涉及的权限或隐私顾虑
+      description: 如果不确定可以留空。
+  - type: checkboxes
+    id: offline
+    attributes:
+      label: 产品原则确认
+      options:
+        - label: 我理解隐私中转站优先本地运行，不会为了自动化默认申请危险权限。
+          required: true

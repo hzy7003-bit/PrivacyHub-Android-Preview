@@ -1,0 +1,51 @@
+name: ROM 兼容性报告
+description: 反馈通知、磁贴、剪贴板或长按菜单在特定设备上的表现
+title: "[ROM] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: App 版本
+      placeholder: 例如 v0.9.27-beta Release
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 手机品牌与型号
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Android 与 ROM 版本
+    validations:
+      required: true
+  - type: checkboxes
+    id: permissions
+    attributes:
+      label: 已开启的系统设置
+      options:
+        - label: 通知权限
+        - label: 自启动
+        - label: 允许后台运行
+        - label: 剪贴板读取权限
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 实际表现
+      placeholder: 例如通知何时消失、磁贴点击后发生什么、长按菜单是否出现入口
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 脱敏诊断截图或失败原因
+      description: 不要上传通知正文、安全箱正文、设备码、激活码或 License。
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我已检查并移除个人信息和敏感内容。
+          required: true
