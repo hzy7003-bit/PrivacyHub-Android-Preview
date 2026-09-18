@@ -1,16 +1,17 @@
 # 安全与构建证据
 
-> 核对版本：`v0.9.27-beta`
+> 核对版本：`v0.10.0-beta`（versionCode 128）
 >
-> 核对日期：2026-08-10
+> 核对日期：2026-09-18
 
 本文记录公开 Release APK 可以独立复查的构建信息。它不是对 Android 系统或第三方 App 行为的绝对安全承诺。
 
 ## 发布文件
 
-- 文件：`PrivacyHub-v0.9.27-beta-release.apk`
-- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.9.27-beta)
-- SHA-256：`36EEE6449DD6300C02E4924B4826F2983B869CAB9258C86DDD6F5E38E6C31EF6`
+- 文件：`PrivacyHub-v0.10.0-beta-release.apk`
+- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.0-beta)
+- SHA-256：`574EEE66110F11DAB4C369E111734E9CB22AF8CC26C000C8DA8FD087FAB42219`
+- 构建启用 R8 混淆、压缩及资源收缩，非 debuggable；不公开源码或 mapping 文件。混淆不等于加密，也不保证不可逆向。
 
 ## 签名证书
 
@@ -30,6 +31,7 @@ android.permission.FOREGROUND_SERVICE
 android.permission.FOREGROUND_SERVICE_SPECIAL_USE
 android.permission.USE_BIOMETRIC
 android.permission.USE_FINGERPRINT (maxSdkVersion=28)
+com.privacyhub.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION (应用自定义 signature 权限)
 ```
 
 清单中没有：
@@ -46,9 +48,9 @@ APK 还声明了由 Android 系统绑定的 Quick Settings Tile、Autofill 和�
 安装 Android SDK Build Tools 后，可以执行：
 
 ```powershell
-Get-FileHash .\PrivacyHub-v0.9.27-beta-release.apk -Algorithm SHA256
-aapt2 dump permissions .\PrivacyHub-v0.9.27-beta-release.apk
-apksigner verify --print-certs .\PrivacyHub-v0.9.27-beta-release.apk
+Get-FileHash .\PrivacyHub-v0.10.0-beta-release.apk -Algorithm SHA256
+aapt2 dump permissions .\PrivacyHub-v0.10.0-beta-release.apk
+apksigner verify --print-certs .\PrivacyHub-v0.10.0-beta-release.apk
 ```
 
 核对重点：
@@ -64,7 +66,7 @@ apksigner verify --print-certs .\PrivacyHub-v0.9.27-beta-release.apk
 - 加密离线备份使用 PBKDF2-HMAC-SHA256 派生密钥和 AES-256-GCM 加密。
 - App 不接入广告、统计或云同步服务。
 - App 不读取 IMEI、手机号或 SIM 信息。
-- 本地诊断不记录安全箱正文。
+- 诊断报告页面展示脱敏摘要，不展示安全箱正文；内部本地诊断记录可能包含内容的短摘要，反馈截图前仍应检查个人信息。
 
 ## 已知边界
 

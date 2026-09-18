@@ -1,6 +1,6 @@
 # 隐私中转站 Android
 
-![隐私中转站：本地运行、无网络权限、本地加密](assets/social-preview.png)
+![隐私中转站 0.10：内容留在本机，操作保持简单。新版花形标识与浅深色真实界面](assets/social-preview.png)
 
 一个由用户主动触发、默认离线运行的 Android 隐私中转工具。即使关闭购物、内容和网盘 App 的剪贴板读取能力，也能通过系统分享或通知栏入口保存、识别并打开收到的链接和口令。
 
@@ -8,7 +8,16 @@
 
 **[下载最新版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/latest)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
 
-> 当前公开测试版：`v0.9.27-beta`。公测包使用独立正式证书签名；已安装 Debug 包的设备不能直接覆盖安装 Release 包。
+> 当前公开测试版：`v0.10.0-beta`。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
+
+## 这次，界面重新整理了
+
+- **中转**：粘贴、输入或从其他 App 分享，先保存，再处理；空闲页不展示敏感历史。
+- **安全箱**：搜索、收藏、最近保存与分类，各有明确入口；查看和编辑分开。
+- **设置**：通知快捷操作、隐私选项与使用指南按需开启。
+- 新花中花标识、统一浅深色界面；通知紧凑内容里直接提供两个操作，按钮更轻巧。
+
+仍然使用 Android 原生界面，不新增账号、联网权限或云服务。新版说明和兼容性边界见 [更新日志](CHANGELOG.md) 与 [已知问题](docs/KnownIssues.md)。
 
 ## 早期体验用户：免费永久 Pro
 
@@ -38,10 +47,12 @@
 ## 产品界面
 
 <p align="center">
-  <img src="assets/screenshots/home.png" width="360" alt="隐私中转站首页，包含搜索、收藏、最近保存和常用标签" />
+  <img src="assets/screenshots/home.png" width="240" alt="新版中转空闲页：添加一段内容，先保存再处理" />
+  <img src="assets/screenshots/vault.png" width="240" alt="新版安全箱：搜索、收藏和最近保存，仅虚构示例" />
+  <img src="assets/screenshots/vault-dark.png" width="240" alt="新版深色安全箱，仅虚构示例" />
 </p>
 
-首页提供搜索、收藏夹、最近保存和常用分类入口。截图仅展示空白界面，不包含安全箱正文、设备码或 License 信息。
+截图取自正式签名 APK 在独立 Android 测试环境中的实际界面，仅裁去系统状态栏和系统导航栏，未重绘 App 界面。内容为公开虚构示例，不使用真实用户安全箱、设备码或 License 信息。通知外框、图标与折叠样式由系统控制，不保证各厂商外观相同。
 
 ## 核心能力
 
@@ -61,7 +72,7 @@
 
 - 使用 Android 官方前台服务和常驻通知，降低普通后台进程被系统立即回收的概率。
 - 服务被系统回收后可按 `START_STICKY` 机制尝试恢复。
-- 用户开启对应选项后，可在设备重启或 App 更新后恢复通知栏入口。
+- App 更新时尝试刷新已开启的通知栏入口；开机恢复由单独选项控制，实际恢复仍受系统限制。
 - 不通过持续唤醒、定时拉起、后台联网或高频任务换取保活，优先控制内存与电量开销。
 
 这是面向长时间可用性的低功耗实现，不是“永不被杀”的承诺。系统强制停止、通知权限关闭，以及三星、vivo、OPPO、小米等厂商 ROM 的自启动或电池策略，仍可能阻止或延迟恢复。
@@ -92,7 +103,7 @@ Android 10+ 和不同厂商 ROM 会限制后台剪贴板读取、通知常驻、
 ## 下载与校验
 
 - [进入 Releases](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/latest)
-- 当前 APK SHA-256：`36EEE6449DD6300C02E4924B4826F2983B869CAB9258C86DDD6F5E38E6C31EF6`
+- 当前 APK SHA-256：`574EEE66110F11DAB4C369E111734E9CB22AF8CC26C000C8DA8FD087FAB42219`
 - 最低支持 Android 8.0（API 26）
 
 ## 反馈与关注
