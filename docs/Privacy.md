@@ -4,7 +4,7 @@
 
 ## 网络
 
-`0.10.1-beta`（versionCode `129`）采用 local-first / offline 设计，Release APK 不声明 `INTERNET` 或 `ACCESS_NETWORK_STATE` 权限，不接入广告 SDK、统计 SDK 或云同步服务。
+`0.10.2-beta`（versionCode `130`）采用 local-first / offline 设计，Release APK 不声明 `INTERNET` 或 `ACCESS_NETWORK_STATE` 权限，不接入广告 SDK、统计 SDK 或云同步服务。
 
 ## 本地数据
 

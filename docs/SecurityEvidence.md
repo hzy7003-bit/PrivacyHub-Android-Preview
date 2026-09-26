@@ -1,6 +1,6 @@
 # 安全与构建证据
 
-> 核对版本：`v0.10.1-beta`（versionCode 129）
+> 核对版本：`v0.10.2-beta`（versionCode 130）
 >
 > 核对日期：2026-09-27
 
@@ -8,10 +8,10 @@
 
 ## 发布文件
 
-- 文件：`PrivacyHub-0.10.1-beta.apk`
-- 大小：`23619899` bytes
-- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.1-beta)
-- SHA-256：`CE5F595AF41AF92BDBE537DFB8811DD92A61EB938B2A0E78853B46F3762B9D18`
+- 文件：`PrivacyHub-0.10.2-beta.apk`
+- 大小：`23619902` bytes
+- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.2-beta)
+- SHA-256：`95892E58B99FBF00CE56FDDF1C0E81DB84C1FBFE411DBC8E7F1D2672F4FF39810`
 - 构建启用 R8 混淆、压缩及资源收缩，非 debuggable；不公开源码或 mapping 文件。混淆不等于加密，也不保证不可逆向。
 
 ## APK 元数据
@@ -19,8 +19,8 @@
 | 项目 | 核对值 |
 | --- | --- |
 | packageName | `com.privacyhub` |
-| versionName | `0.10.1-beta` |
-| versionCode | `129` |
+| versionName | `0.10.2-beta` |
+| versionCode | `130` |
 | minSdk | `26`（Android 8.0 / API 26+） |
 | targetSdk | `35` |
 | debuggable | `false` |
@@ -64,11 +64,11 @@ APK 还声明了由 Android 系统绑定的 Quick Settings Tile、Autofill 和�
 安装 Android SDK Build Tools 与 Command-line Tools 后，可以执行：
 
 ```powershell
-Get-FileHash .\PrivacyHub-0.10.1-beta.apk -Algorithm SHA256
-aapt2 dump permissions .\PrivacyHub-0.10.1-beta.apk
-apksigner verify --verbose --print-certs .\PrivacyHub-0.10.1-beta.apk
-apkanalyzer manifest print .\PrivacyHub-0.10.1-beta.apk
-apkanalyzer manifest debuggable .\PrivacyHub-0.10.1-beta.apk
+Get-FileHash .\PrivacyHub-0.10.2-beta.apk -Algorithm SHA256
+aapt2 dump permissions .\PrivacyHub-0.10.2-beta.apk
+apksigner verify --verbose --print-certs .\PrivacyHub-0.10.2-beta.apk
+apkanalyzer manifest print .\PrivacyHub-0.10.2-beta.apk
+apkanalyzer manifest debuggable .\PrivacyHub-0.10.2-beta.apk
 ```
 
 核对重点：

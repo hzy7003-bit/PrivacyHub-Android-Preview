@@ -6,11 +6,17 @@
 
 > **Privacy Hub for Android** is a local-first, offline privacy app for securely receiving, storing and routing shared links or text without granting shopping and content apps clipboard access. It ships without Internet permission, ads, analytics or cloud sync.
 
-**[下载当前测试版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.1-beta)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
+**[下载当前测试版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.2-beta)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
 
-> 当前公开测试版：`v0.10.1-beta`（versionCode `129`），支持 Android 8.0 / API 26+。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
+> 当前公开测试版：`v0.10.2-beta`（versionCode `130`），支持 Android 8.0 / API 26+。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
 
-## 本次更新：本地安全与使用稳定性
+## 本次更新：导航与设置操作细节（0.10.2-beta）
+
+- 修复进入安全箱时，数据加载期间短暂闪现“新建安全箱内容”操作的问题。
+- 设置页进入与返回不再横向滑动，和中转、安全箱的切页感受一致。
+- 通知中的关闭操作改为“关闭通知按钮”，与刷新按钮文字长度更协调。
+
+## 0.10.1-beta：本地安全与使用稳定性
 
 - 提升安全箱数据库密钥持久化可靠性，改进加密备份的合并（Merge）与替换（Replace）恢复一致性。
 - 加强 Autofill 网站作用域隔离与网盘提取码目标网站限制，进一步脱敏诊断记录。
@@ -103,10 +109,10 @@ Android 10+ 和不同厂商 ROM 会限制后台剪贴板读取、通知常驻、
 
 ## 下载与校验
 
-- [进入 v0.10.1-beta Release](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.1-beta)
-- 当前版本：`0.10.1-beta` / versionCode `129`（Beta）
-- APK：`PrivacyHub-0.10.1-beta.apk`，大小 `23619899` bytes
-- 当前 APK SHA-256：`CE5F595AF41AF92BDBE537DFB8811DD92A61EB938B2A0E78853B46F3762B9D18`
+- [进入 v0.10.2-beta Release](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.2-beta)
+- 当前版本：`0.10.2-beta` / versionCode `130`（Beta）
+- APK：`PrivacyHub-0.10.2-beta.apk`，大小 `23619902` bytes
+- 当前 APK SHA-256：`95892E58B99FBF00CE56FDDF1C0E81DB84C1FBFE411DBC8E7F1D2672F4FF39810`
 - 最低支持 Android 8.0（API 26）
 
 ## 反馈与关注

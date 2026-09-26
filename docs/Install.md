@@ -1,9 +1,9 @@
 # 安装说明
 
-当前公开测试版为 `0.10.1-beta`（versionCode `129`），最低支持 Android 8.0 / API 26+。
+当前公开测试版为 `0.10.2-beta`（versionCode `130`），最低支持 Android 8.0 / API 26+。
 
-1. 打开 [v0.10.1-beta Release 页面](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.1-beta)。
-2. 下载 `PrivacyHub-0.10.1-beta.apk`，并按 [安全与构建证据](SecurityEvidence.md) 核对 SHA-256 和正式签名证书。
+1. 打开 [v0.10.2-beta Release 页面](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.2-beta)。
+2. 下载 `PrivacyHub-0.10.2-beta.apk`，并按 [安全与构建证据](SecurityEvidence.md) 核对 SHA-256 和正式签名证书。
 3. 在 Android 系统中允许“安装未知来源应用”。
 4. 安装后根据需要开启通知权限。
 
@@ -13,4 +13,4 @@
 
 APK 采用正式签名、R8 混淆和资源收缩，直接安装即可，不需要解压密码。混淆不是源码加密。文件哈希和证书摘要见 [安全与构建证据](SecurityEvidence.md)。
 
-本版 APK 大小为 `23619899` bytes，SHA-256 为 `CE5F595AF41AF92BDBE537DFB8811DD92A61EB938B2A0E78853B46F3762B9D18`。文件哈希或签名证书不一致时，请停止安装并重新核对下载来源。
+本版 APK 大小为 `23619902` bytes，SHA-256 为 `95892E58B99FBF00CE56FDDF1C0E81DB84C1FBFE411DBC8E7F1D2672F4FF39810`。文件哈希或签名证书不一致时，请停止安装并重新核对下载来源。
