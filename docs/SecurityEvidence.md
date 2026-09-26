@@ -1,28 +1,43 @@
 # 安全与构建证据
 
-> 核对版本：`v0.10.0-beta`（versionCode 128）
+> 核对版本：`v0.10.1-beta`（versionCode 129）
 >
-> 核对日期：2026-09-18
+> 核对日期：2026-09-27
 
 本文记录公开 Release APK 可以独立复查的构建信息。它不是对 Android 系统或第三方 App 行为的绝对安全承诺。
 
 ## 发布文件
 
-- 文件：`PrivacyHub-v0.10.0-beta-release.apk`
-- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.0-beta)
-- SHA-256：`574EEE66110F11DAB4C369E111734E9CB22AF8CC26C000C8DA8FD087FAB42219`
+- 文件：`PrivacyHub-0.10.1-beta.apk`
+- 大小：`23619899` bytes
+- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.1-beta)
+- SHA-256：`CE5F595AF41AF92BDBE537DFB8811DD92A61EB938B2A0E78853B46F3762B9D18`
 - 构建启用 R8 混淆、压缩及资源收缩，非 debuggable；不公开源码或 mapping 文件。混淆不等于加密，也不保证不可逆向。
+
+## APK 元数据
+
+| 项目 | 核对值 |
+| --- | --- |
+| packageName | `com.privacyhub` |
+| versionName | `0.10.1-beta` |
+| versionCode | `129` |
+| minSdk | `26`（Android 8.0 / API 26+） |
+| targetSdk | `35` |
+| debuggable | `false` |
+| allowBackup | `false` |
 
 ## 签名证书
 
 - 证书主题：`CN=Privacy Hub, O=Privacy Hub`
 - 证书 SHA-256：`FAFCDDCE1E680A685C9C0B222D996C99ACE9E1EC3F755BD238F6ED1C5D2D1709`
+- APK Signature Scheme v2：`true`，验证通过。
+- APK Signature Scheme v3：`true`，验证通过。
 
 后续版本应继续使用同一正式发布证书。证书摘要变化时，不应在未说明原因的情况下继续安装。
 
 ## APK 权限清单
 
-使用 Android Build Tools `aapt2 dump permissions` 核对当前 APK，得到以下权限：
+使用 Android SDK `apkanalyzer manifest permissions` 与 `manifest print` 核对当前 APK，得到以下权限：
 
 ```text
 android.permission.POST_NOTIFICATIONS
@@ -39,25 +54,29 @@ com.privacyhub.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION (应用自定义 signatu
 ```text
 android.permission.INTERNET
 android.permission.ACCESS_NETWORK_STATE
+android.permission.QUERY_ALL_PACKAGES
 ```
 
 APK 还声明了由 Android 系统绑定的 Quick Settings Tile、Autofill 和可选无障碍服务。它们不是联网权限；其中网盘提取码辅助的无障碍服务默认关闭，只能由用户在系统设置中主动开启。
 
 ## 自行复查
 
-安装 Android SDK Build Tools 后，可以执行：
+安装 Android SDK Build Tools 与 Command-line Tools 后，可以执行：
 
 ```powershell
-Get-FileHash .\PrivacyHub-v0.10.0-beta-release.apk -Algorithm SHA256
-aapt2 dump permissions .\PrivacyHub-v0.10.0-beta-release.apk
-apksigner verify --print-certs .\PrivacyHub-v0.10.0-beta-release.apk
+Get-FileHash .\PrivacyHub-0.10.1-beta.apk -Algorithm SHA256
+aapt2 dump permissions .\PrivacyHub-0.10.1-beta.apk
+apksigner verify --verbose --print-certs .\PrivacyHub-0.10.1-beta.apk
+apkanalyzer manifest print .\PrivacyHub-0.10.1-beta.apk
+apkanalyzer manifest debuggable .\PrivacyHub-0.10.1-beta.apk
 ```
 
 核对重点：
 
 1. 文件 SHA-256 与本页一致。
-2. 权限输出中没有 `INTERNET` 和 `ACCESS_NETWORK_STATE`。
-3. 签名证书 SHA-256 与本页一致。
+2. 权限输出中没有 `INTERNET`、`ACCESS_NETWORK_STATE` 和 `QUERY_ALL_PACKAGES`。
+3. v2 / v3 均验证通过，签名证书 SHA-256 与本页一致。
+4. 包名、版本与 SDK 信息匹配上表；`allowBackup=false`、`debuggable=false`。Manifest 未显式声明 debuggable 时，使用 `manifest debuggable` 核对其有效值。
 
 ## 数据边界
 
@@ -66,7 +85,7 @@ apksigner verify --print-certs .\PrivacyHub-v0.10.0-beta-release.apk
 - 加密离线备份使用 PBKDF2-HMAC-SHA256 派生密钥和 AES-256-GCM 加密。
 - App 不接入广告、统计或云同步服务。
 - App 不读取 IMEI、手机号或 SIM 信息。
-- 诊断报告页面展示脱敏摘要，不展示安全箱正文；内部本地诊断记录可能包含内容的短摘要，反馈截图前仍应检查个人信息。
+- 本版进一步脱敏诊断记录，诊断报告不展示安全箱正文；反馈截图与文字前仍应检查个人信息。
 
 ## 已知边界
 

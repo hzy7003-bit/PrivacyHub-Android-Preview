@@ -6,16 +6,16 @@
 
 > **Privacy Hub for Android** is a local-first, offline privacy app for securely receiving, storing and routing shared links or text without granting shopping and content apps clipboard access. It ships without Internet permission, ads, analytics or cloud sync.
 
-**[下载最新版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/latest)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
+**[下载当前测试版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.1-beta)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
 
-> 当前公开测试版：`v0.10.0-beta`。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
+> 当前公开测试版：`v0.10.1-beta`（versionCode `129`），支持 Android 8.0 / API 26+。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
 
-## 这次，界面重新整理了
+## 本次更新：本地安全与使用稳定性
 
-- **中转**：粘贴、输入或从其他 App 分享，先保存，再处理；空闲页不展示敏感历史。
-- **安全箱**：搜索、收藏、最近保存与分类，各有明确入口；查看和编辑分开。
-- **设置**：通知快捷操作、隐私选项与使用指南按需开启。
-- 新花中花标识、统一浅深色界面；通知紧凑内容里直接提供两个操作，按钮更轻巧。
+- 提升安全箱数据库密钥持久化可靠性，改进加密备份的合并（Merge）与替换（Replace）恢复一致性。
+- 加强 Autofill 网站作用域隔离与网盘提取码目标网站限制，进一步脱敏诊断记录。
+- 改进通知栏 / 控制中心磁贴保存稳定性与后台通知恢复策略。
+- 改进 Pro / 设置异常状态保护，完成 Material 3 浅深色界面一致性收尾，并加强正式签名校验。
 
 仍然使用 Android 原生界面，不新增账号、联网权限或云服务。新版说明和兼容性边界见 [更新日志](CHANGELOG.md) 与 [已知问题](docs/KnownIssues.md)。
 
@@ -86,9 +86,10 @@
 
 ## 隐私承诺与可核验事实
 
-- Release APK **不声明** `INTERNET` 或 `ACCESS_NETWORK_STATE`。
+- Release APK **不声明** `INTERNET`、`ACCESS_NETWORK_STATE` 或 `QUERY_ALL_PACKAGES`。
 - 无广告 SDK、无统计 SDK、无云同步。
 - 安全箱使用 Room + SQLCipher，数据库密钥由 Android Keystore 管理。
+- `allowBackup=false`、`debuggable=false`，数据备份由用户主动使用加密离线备份功能完成。
 - 基础功能不依赖无障碍；网盘提取码辅助是默认关闭的可选 Pro Beta 功能。
 - App 不申请 Root，不读取 IMEI、手机号或 SIM 信息。
 
@@ -102,8 +103,10 @@ Android 10+ 和不同厂商 ROM 会限制后台剪贴板读取、通知常驻、
 
 ## 下载与校验
 
-- [进入 Releases](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/latest)
-- 当前 APK SHA-256：`574EEE66110F11DAB4C369E111734E9CB22AF8CC26C000C8DA8FD087FAB42219`
+- [进入 v0.10.1-beta Release](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.1-beta)
+- 当前版本：`0.10.1-beta` / versionCode `129`（Beta）
+- APK：`PrivacyHub-0.10.1-beta.apk`，大小 `23619899` bytes
+- 当前 APK SHA-256：`CE5F595AF41AF92BDBE537DFB8811DD92A61EB938B2A0E78853B46F3762B9D18`
 - 最低支持 Android 8.0（API 26）
 
 ## 反馈与关注

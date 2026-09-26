@@ -1,15 +1,16 @@
 # 隐私中转站公开进度
 
-> 核对日期：2026-09-18
+> 核对日期：2026-09-27
 >
-> 当前版本：`0.10.0-beta`
+> 当前公开版本：`0.10.1-beta` / versionCode `129`，状态：Beta
 
-## 本次界面更新
+## 本次更新
 
-- 中转 / 安全箱 / 设置三入口，先保存再处理；空闲中转页不显示敏感历史。
-- Native View 浅深色设计系统、详情查看/编辑分离、花形标识、新版欢迎卡片和使用指南。
-- 通知折叠内容双操作与更紧凑的按钮外观，保留系统外框和厂商行为边界。
-- 同签名升级，不改变数据库 schema、License 或备份格式；具体权限和 APK 哈希见 [安全证据](SecurityEvidence.md)。
+- 提升本地数据库密钥持久化可靠性，改进加密备份合并 / 替换恢复一致性。
+- 加强 Autofill 网站作用域隔离、网盘提取码目标网站限制与诊断记录脱敏。
+- 改进通知栏 / 磁贴保存、后台通知恢复，以及 Pro / 设置异常状态保护。
+- 完成 Material 3 UI 一致性收尾；保留中转 / 安全箱 / 设置三入口和花形标识。
+- 支持 Android 8.0 / API 26+，沿用同一正式签名证书；具体权限和 APK 哈希见 [安全证据](SecurityEvidence.md)。
 
 ## 已实现的免费功能
 
@@ -32,15 +33,17 @@
 
 ## 隐私与安全
 
-- APK 不声明 `INTERNET` 或 `ACCESS_NETWORK_STATE`。
+- APK 不声明 `INTERNET`、`ACCESS_NETWORK_STATE` 或 `QUERY_ALL_PACKAGES`。
 - 无广告、无统计 SDK、无云同步。
 - 安全箱使用 Room + SQLCipher。
 - 数据库密钥、License 和敏感设置使用 Android Keystore 保护。
 - Release APK 启用 R8/ProGuard 混淆压缩和资源收缩，并使用正式证书签名。
+- `allowBackup=false`、`debuggable=false`，继续 local-first / offline 运行。
 
 ## 已知系统边界
 
 - Android 10+ 和厂商 ROM 会限制后台剪切板读取、通知常驻和磁贴行为。
+- 系统强制停止后的后台恢复受 Android / ROM 控制。
 - 系统长按文本菜单是否展示入口由来源 App 和 ROM 决定。
 - 第三方 App 可随版本改变 Deep Link 和 Autofill 支持。
 - App 无法清除输入法自己的历史或厂商私有云剪切板。
@@ -48,12 +51,10 @@
 
 ## 当前验证状态
 
-- 本轮 Debug 与 Release 各 84 项 JVM 单元测试通过；Android Lint 无错误，Debug 和 Release 构建通过（仍有已有告警）。
-- API 35 独立模拟器验证 0.9.27 正式版覆盖升级至 0.10.0，旧示例标题与正文保留；新版手动保存、中转和收藏通过。不是全 ROM 或全部第三方业务验收。
-- Release 已启用 R8 混淆和资源收缩。
-- Release 未声明网络权限。
-- `e.tb.cn` 完整分享文本、参数保留和 scheme 转换回归测试通过；目标商品页仍需扩展实机覆盖。
-- Autofill 已在 vivo 实机完成基础闭环；网盘填码已完成部分实机流程。
+- 本次正式 Release APK 的大小、SHA-256 与正式签名证书摘要已独立复核，v2 / v3 签名验证通过。
+- 包名、版本、minSdk / targetSdk、非调试与禁用系统备份标志已从 APK 复核。
+- Manifest 未声明 `INTERNET`、`ACCESS_NETWORK_STATE` 或 `QUERY_ALL_PACKAGES`。
+- 公开文件与复查命令见 [安全与构建证据](SecurityEvidence.md)。这不代表全 ROM 或所有第三方业务均已兼容。
 
 ## 未完成
 
