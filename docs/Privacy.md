@@ -4,11 +4,11 @@
 
 ## 网络
 
-`0.10.2-beta`（versionCode `130`）采用 local-first / offline 设计，Release APK 不声明 `INTERNET` 或 `ACCESS_NETWORK_STATE` 权限，不接入广告 SDK、统计 SDK 或云同步服务。
+`0.10.4-beta`（versionCode `132`）采用 local-first / offline 设计，Release APK 不声明 `INTERNET`、`ACCESS_NETWORK_STATE` 或 `QUERY_ALL_PACKAGES` 权限，不接入广告 SDK、统计 SDK 或云同步服务。
 
 ## 本地数据
 
-用户保存的内容保存在本地安全箱中。正式数据库使用 Room + SQLCipher，数据库密钥由 Android Keystore 管理。本版提升了数据库密钥持久化可靠性，改进加密离线备份的合并与替换恢复一致性。
+用户保存的内容保存在本地安全箱中。正式数据库使用 Room + SQLCipher，数据库密钥由 Android Keystore 管理；密钥状态异常时 fail-closed，不以新密钥覆盖已有数据库。系统自动备份保持关闭并排除数据存储域；用户可主动使用独立的加密离线备份，支持合并与替换恢复。
 
 Release APK 设置 `allowBackup=false`、`debuggable=false`；用户可主动使用 Pro 加密离线备份功能。诊断记录进一步脱敏，提交反馈前仍应检查截图和文字，避免包含账号、设备码、激活码或安全箱正文。
 
@@ -26,7 +26,7 @@ Release APK 设置 `allowBackup=false`、`debuggable=false`；用户可主动使
 
 网盘提取码辅助只执行用户已保存提取码的一次性文本填入，不自动点击确认、登录、下载或支付。基础保存、分享接收、安全箱和链接路由均不依赖无障碍服务。
 
-本版加强 Autofill 网站作用域隔离与网盘提取码目标网站限制；这些 Beta 功能仍受目标页面和浏览器兼容性影响。
+本版原生 Autofill 凭据仅在请求包名与当前安装应用签名身份匹配时提供。网页来源无法独立可信验证，因此网页 Autofill 当前 fail-closed；已有网页凭据数据会保留，但不会自动填入。网盘提取码辅助仍受目标页面与浏览器兼容性影响，并仅面向可信 host。
 
 ## 后台与电量策略
 

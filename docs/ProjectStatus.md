@@ -2,7 +2,15 @@
 
 > 核对日期：2026-09-27
 >
-> 当前公开版本：`0.10.3-beta` / versionCode `131`，状态：Beta
+> 当前公开版本：`0.10.4-beta` / versionCode `132`，状态：Beta
+
+## 0.10.4-beta 身份边界与备份保护
+
+- 原生 Autofill 凭据按目标包名与当前安装应用签名身份共同约束；来源无法可信验证时 fail-closed。网页 Autofill 暂停自动填入，已有网页凭据数据保留。
+- Room schema v9 增加 nullable signer digest；加密离线备份 v5 兼容读取 v1–v4，恢复时仅在本机签名匹配时保留绑定。
+- 系统备份和设备迁移规则排除应用数据存储域；`allowBackup=false` 保持不变，用户主动加密离线备份继续可用。
+- Debug / Release JVM 各 220/220；API 35 instrumentation 28/28，migration 8/8；Debug / Release Lint 均 0 errors。正式包使用已验收功能源码和沿用的正式签名；仪器测试在候选功能源码阶段完成。
+- 产物 SHA-256、签名、权限及覆盖限制见 [安全与构建证据](SecurityEvidence.md) 与 [0.10.4 发布说明](Release-0.10.4.md)。真实第三方 Autofill 页面、多 ROM / 实体设备完整矩阵未覆盖。
 
 ## 0.10.3-beta 百度网盘通知栏流程修正
 

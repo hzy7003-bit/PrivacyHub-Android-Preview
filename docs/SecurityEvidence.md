@@ -1,6 +1,6 @@
 # 安全与构建证据
 
-> 核对版本：`v0.10.3-beta`（versionCode 131）
+> 核对版本：`v0.10.4-beta`（versionCode 132）
 >
 > 核对日期：2026-09-27
 
@@ -8,10 +8,10 @@
 
 ## 发布文件
 
-- 文件：`PrivacyHub-0.10.3-beta.apk`
-- 大小：`23619902` bytes
-- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.3-beta)
-- SHA-256：`E433CA1F61B0BC2A073F2EEE18D2661FB621C0A72BEC39442C3ACE64302FBFBF`
+- 文件：`PrivacyHub-0.10.4-beta.apk`
+- 大小：`23709961` bytes
+- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.4-beta)
+- SHA-256：`6474D4F2D67E33EFB639BBCC579D81D875532DB9A5B9CFB11A2B0D73B9217FC4`
 - 构建启用 R8 混淆、压缩及资源收缩，非 debuggable；不公开源码或 mapping 文件。混淆不等于加密，也不保证不可逆向。
 
 ## APK 元数据
@@ -19,8 +19,8 @@
 | 项目 | 核对值 |
 | --- | --- |
 | packageName | `com.privacyhub` |
-| versionName | `0.10.3-beta` |
-| versionCode | `131` |
+| versionName | `0.10.4-beta` |
+| versionCode | `132` |
 | minSdk | `26`（Android 8.0 / API 26+） |
 | targetSdk | `35` |
 | debuggable | `false` |
@@ -64,11 +64,11 @@ APK 还声明了由 Android 系统绑定的 Quick Settings Tile、Autofill 和�
 安装 Android SDK Build Tools 与 Command-line Tools 后，可以执行：
 
 ```powershell
-Get-FileHash .\PrivacyHub-0.10.3-beta.apk -Algorithm SHA256
-aapt2 dump permissions .\PrivacyHub-0.10.3-beta.apk
-apksigner verify --verbose --print-certs .\PrivacyHub-0.10.3-beta.apk
-apkanalyzer manifest print .\PrivacyHub-0.10.3-beta.apk
-apkanalyzer manifest debuggable .\PrivacyHub-0.10.3-beta.apk
+Get-FileHash .\PrivacyHub-0.10.4-beta.apk -Algorithm SHA256
+aapt2 dump permissions .\PrivacyHub-0.10.4-beta.apk
+apksigner verify --verbose --print-certs .\PrivacyHub-0.10.4-beta.apk
+apkanalyzer manifest print .\PrivacyHub-0.10.4-beta.apk
+apkanalyzer manifest debuggable .\PrivacyHub-0.10.4-beta.apk
 ```
 
 核对重点：
@@ -85,7 +85,7 @@ apkanalyzer manifest debuggable .\PrivacyHub-0.10.3-beta.apk
 - 加密离线备份使用 PBKDF2-HMAC-SHA256 派生密钥和 AES-256-GCM 加密。
 - App 不接入广告、统计或云同步服务。
 - App 不读取 IMEI、手机号或 SIM 信息。
-- 本版进一步脱敏诊断记录，诊断报告不展示安全箱正文；反馈截图与文字前仍应检查个人信息。
+- 本版进一步脱敏诊断记录，诊断报告不展示安全箱正文；原生 Autofill 使用应用包名与签名身份边界，网页 Autofill 当前 fail-closed。反馈截图与文字前仍应检查个人信息。
 
 ## 已知边界
 

@@ -6,11 +6,18 @@
 
 > **Privacy Hub for Android** is a local-first, offline privacy app for securely receiving, storing and routing shared links or text without granting shopping and content apps clipboard access. It ships without Internet permission, ads, analytics or cloud sync.
 
-**[下载当前测试版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.3-beta)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
+**[下载当前测试版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.4-beta)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
 
-> 当前公开测试版：`v0.10.3-beta`（versionCode `131`），支持 Android 8.0 / API 26+。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
+> 当前公开测试版：`v0.10.4-beta`（versionCode `132`），支持 Android 8.0 / API 26+。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
 
-## 本次更新：百度网盘通知栏跳转与提取码辅助（0.10.3-beta）
+## 本次更新：Autofill 身份边界与备份保护（0.10.4-beta）
+
+- 原生 App 凭据仅在请求包名和当前安装应用签名身份都匹配时提供。
+- 网页 Autofill 暂时 fail-closed：本版无法独立可信验证网页来源，因此不会自动向网页填入凭据；已有网页凭据数据会保留。
+- 加固 Android 系统备份与设备迁移排除规则；用户主动加密离线备份继续可用，并兼容旧备份格式。
+- 新增第三方组件许可文本和离线查看入口。验证范围与限制见 [0.10.4 发布说明](docs/Release-0.10.4.md)。
+
+## 0.10.3-beta：百度网盘通知栏跳转与提取码辅助
 
 - 用户启用网盘自动化、Pro 权益和无障碍服务，且分享内容含有效百度网盘提取码时，“保存并跳转”会显式在支持的浏览器打开链接并等待一次性填码。
 - 避免系统 App Link 直接接管链接、跳过浏览器输入页面；不自动确认、登录、下载或支付。
@@ -87,7 +94,7 @@
 
 - ECDSA P-256 离线永久 License 与设备绑定。
 - AES-256-GCM 加密离线备份及跨设备恢复。
-- Android Autofill 系统自动填充 Beta。
+- Android Autofill Beta：当前仅支持身份可验证的原生 App 请求；网页 Autofill 暂时 fail-closed，详见 [已知问题](docs/KnownIssues.md)。
 - 网盘提取码辅助 Beta：需用户主动开启专用无障碍服务，只执行一次性文本填入，不自动确认、登录或下载。
 
 ## 隐私承诺与可核验事实
@@ -109,10 +116,10 @@ Android 10+ 和不同厂商 ROM 会限制后台剪贴板读取、通知常驻、
 
 ## 下载与校验
 
-- [进入 v0.10.3-beta Release](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.3-beta)
-- 当前版本：`0.10.3-beta` / versionCode `131`（Beta）
-- APK：`PrivacyHub-0.10.3-beta.apk`，大小 `23619902` bytes
-- 当前 APK SHA-256：`E433CA1F61B0BC2A073F2EEE18D2661FB621C0A72BEC39442C3ACE64302FBFBF`
+- [进入 v0.10.4-beta Release](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.4-beta)
+- 当前版本：`0.10.4-beta` / versionCode `132`（Beta）
+- APK：`PrivacyHub-0.10.4-beta.apk`，大小 `23709961` bytes
+- 当前 APK SHA-256：`6474D4F2D67E33EFB639BBCC579D81D875532DB9A5B9CFB11A2B0D73B9217FC4`
 - 最低支持 Android 8.0（API 26）
 
 ## 反馈与关注
