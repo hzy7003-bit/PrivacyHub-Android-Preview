@@ -6,15 +6,15 @@
 
 > **Privacy Hub for Android** is a local-first, offline privacy app for securely receiving, storing and routing shared links or text without granting shopping and content apps clipboard access. It ships without Internet permission, ads, analytics or cloud sync.
 
-**[下载当前测试版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.2-beta)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
+**[下载当前测试版 APK](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.3-beta)** · **[查看隐私证据](docs/SecurityEvidence.md)** · **[安装说明](docs/Install.md)**
 
-> 当前公开测试版：`v0.10.2-beta`（versionCode `130`），支持 Android 8.0 / API 26+。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
+> 当前公开测试版：`v0.10.3-beta`（versionCode `131`），支持 Android 8.0 / API 26+。沿用原正式证书，公开 Release 用户可覆盖升级；Debug 测试包不能与 Release 互相覆盖，请不要为换版本直接卸载有数据的应用。
 
-## 本次更新：导航与设置操作细节（0.10.2-beta）
+## 本次更新：百度网盘通知栏跳转与提取码辅助（0.10.3-beta）
 
-- 修复进入安全箱时，数据加载期间短暂闪现“新建安全箱内容”操作的问题。
-- 设置页进入与返回不再横向滑动，和中转、安全箱的切页感受一致。
-- 通知中的关闭操作改为“关闭通知按钮”，与刷新按钮文字长度更协调。
+- 用户启用网盘自动化、Pro 权益和无障碍服务，且分享内容含有效百度网盘提取码时，“保存并跳转”会显式在支持的浏览器打开链接并等待一次性填码。
+- 避免系统 App Link 直接接管链接、跳过浏览器输入页面；不自动确认、登录、下载或支付。
+- host、浏览器与功能状态不符合条件时仍沿用原有路由。
 
 ## 0.10.1-beta：本地安全与使用稳定性
 
@@ -109,10 +109,10 @@ Android 10+ 和不同厂商 ROM 会限制后台剪贴板读取、通知常驻、
 
 ## 下载与校验
 
-- [进入 v0.10.2-beta Release](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.2-beta)
-- 当前版本：`0.10.2-beta` / versionCode `130`（Beta）
-- APK：`PrivacyHub-0.10.2-beta.apk`，大小 `23619902` bytes
-- 当前 APK SHA-256：`95892E58B99FBF00CE56FDDF1C0E81DB84C1FBFE411DBC8E7F1D2672F4FF39810`
+- [进入 v0.10.3-beta Release](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.3-beta)
+- 当前版本：`0.10.3-beta` / versionCode `131`（Beta）
+- APK：`PrivacyHub-0.10.3-beta.apk`，大小 `23619902` bytes
+- 当前 APK SHA-256：`E433CA1F61B0BC2A073F2EEE18D2661FB621C0A72BEC39442C3ACE64302FBFBF`
 - 最低支持 Android 8.0（API 26）
 
 ## 反馈与关注
