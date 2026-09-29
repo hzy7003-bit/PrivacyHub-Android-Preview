@@ -138,6 +138,6 @@ Android 10+ 和不同厂商 ROM 会限制后台剪贴板读取、通知常驻、
 
 ### Source Available
 
-PrivacyHub 0.10.4-beta 的源码快照已单独发布于 [PrivacyHub-Android-Source](https://github.com/hzy7003-bit/PrivacyHub-Android-Source)，采用 PolyForm Noncommercial License 1.0.0。源码快照不包含官方 APK；商业使用需另行获得授权，详情见源码仓库中的许可说明。
+PrivacyHub 0.10.5-beta 的 Source Available 源码快照已单独发布于 [PrivacyHub-Android-Source](https://github.com/hzy7003-bit/PrivacyHub-Android-Source/releases/tag/v0.10.5-beta)，采用 PolyForm Noncommercial License 1.0.0。源码快照不包含官方 APK；商业使用需另行获得授权，详情见源码仓库中的许可说明。该快照是 Source Available，并非 Open Source / FOSS。
 
-最新二进制版本为 `0.10.5-beta`；最新经过审计的 Source Available 快照仍为 `0.10.4-beta`。`0.10.5-beta` 源码快照尚未发布，将在独立源码审计后提供。
+当前最新二进制版本和最新经过审计的 Source Available 快照均为 `0.10.5-beta`。
