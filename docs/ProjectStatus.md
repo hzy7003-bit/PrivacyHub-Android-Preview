@@ -1,8 +1,16 @@
 # 隐私中转站公开进度
 
-> 核对日期：2026-09-27
+> 核对日期：2026-09-30
 >
-> 当前公开版本：`0.10.4-beta` / versionCode `132`，状态：Beta
+> 当前公开版本：`0.10.5-beta` / versionCode `133`，状态：Beta
+
+## 0.10.5-beta 安全与可靠性加固
+
+- 收紧分享输入与无障碍自动填码边界，降低数据库操作对界面的阻塞，并加强异步任务生命周期管理。
+- 加强备份/恢复隔离、分类跨存储失败恢复和设置异步渲染稳定性。设置页回归在 Release → Release 验证中被发现并修复后，完整 API 35 instrumentation 通过 39/39。
+- Debug / Release JVM 各 255/255；Debug / Release Lint 均 0 errors。0.10.4-beta → 0.10.5-beta Release 覆盖升级后，安全箱内容、分类、Home tag 和设置值均保留。
+- Room schema v9、Backup payload v5；未新增 INTERNET、ACCESS_NETWORK_STATE 或 QUERY_ALL_PACKAGES。
+- 当前最新经过审计的 Source Available 快照仍为 0.10.4-beta；0.10.5-beta 源码快照将在独立审计后发布。
 
 ## 0.10.4-beta 身份边界与备份保护
 

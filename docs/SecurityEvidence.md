@@ -1,17 +1,17 @@
 # 安全与构建证据
 
-> 核对版本：`v0.10.4-beta`（versionCode 132）
+> 核对版本：`v0.10.5-beta`（versionCode 133）
 >
-> 核对日期：2026-09-27
+> 核对日期：2026-09-30
 
 本文记录公开 Release APK 可以独立复查的构建信息。它不是对 Android 系统或第三方 App 行为的绝对安全承诺。
 
 ## 发布文件
 
-- 文件：`PrivacyHub-0.10.4-beta.apk`
-- 大小：`23709961` bytes
-- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.4-beta)
-- SHA-256：`6474D4F2D67E33EFB639BBCC579D81D875532DB9A5B9CFB11A2B0D73B9217FC4`
+- 文件：`PrivacyHub-0.10.5-beta.apk`
+- 大小：`23726447` bytes
+- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.5-beta)
+- SHA-256：`62DD94F8B6D6DDA0406AD5E440706F18C66E0C6DFAA4A34F033A1DB916B4842C`
 - 构建启用 R8 混淆、压缩及资源收缩，非 debuggable；不公开源码或 mapping 文件。混淆不等于加密，也不保证不可逆向。
 
 ## APK 元数据
@@ -19,8 +19,8 @@
 | 项目 | 核对值 |
 | --- | --- |
 | packageName | `com.privacyhub` |
-| versionName | `0.10.4-beta` |
-| versionCode | `132` |
+| versionName | `0.10.5-beta` |
+| versionCode | `133` |
 | minSdk | `26`（Android 8.0 / API 26+） |
 | targetSdk | `35` |
 | debuggable | `false` |
@@ -37,7 +37,7 @@
 
 ## APK 权限清单
 
-使用 Android SDK `apkanalyzer manifest permissions` 与 `manifest print` 核对当前 APK，得到以下权限：
+使用 Android SDK Build Tools 核对当前 APK，得到以下权限：
 
 ```text
 android.permission.POST_NOTIFICATIONS
@@ -64,11 +64,11 @@ APK 还声明了由 Android 系统绑定的 Quick Settings Tile、Autofill 和�
 安装 Android SDK Build Tools 与 Command-line Tools 后，可以执行：
 
 ```powershell
-Get-FileHash .\PrivacyHub-0.10.4-beta.apk -Algorithm SHA256
-aapt2 dump permissions .\PrivacyHub-0.10.4-beta.apk
-apksigner verify --verbose --print-certs .\PrivacyHub-0.10.4-beta.apk
-apkanalyzer manifest print .\PrivacyHub-0.10.4-beta.apk
-apkanalyzer manifest debuggable .\PrivacyHub-0.10.4-beta.apk
+Get-FileHash .\PrivacyHub-0.10.5-beta.apk -Algorithm SHA256
+aapt2 dump permissions .\PrivacyHub-0.10.5-beta.apk
+apksigner verify --verbose --print-certs .\PrivacyHub-0.10.5-beta.apk
+apkanalyzer manifest print .\PrivacyHub-0.10.5-beta.apk
+apkanalyzer manifest debuggable .\PrivacyHub-0.10.5-beta.apk
 ```
 
 核对重点：
