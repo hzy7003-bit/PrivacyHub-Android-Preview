@@ -1,17 +1,17 @@
 # 安全与构建证据
 
-> 核对版本：`v0.10.5-beta`（versionCode 133）
+> 核对版本：`v0.10.6-beta`（versionCode 134）
 >
-> 核对日期：2026-09-30
+> 核对日期：2026-10-10
 
 本文记录公开 Release APK 可以独立复查的构建信息。它不是对 Android 系统或第三方 App 行为的绝对安全承诺。
 
 ## 发布文件
 
-- 文件：`PrivacyHub-0.10.5-beta.apk`
-- 大小：`23726447` bytes
-- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.5-beta)
-- SHA-256：`62DD94F8B6D6DDA0406AD5E440706F18C66E0C6DFAA4A34F033A1DB916B4842C`
+- 文件：`PrivacyHub-0.10.6-beta.apk`
+- 大小：`23726444` bytes
+- [GitHub Release 下载页](https://github.com/hzy7003-bit/PrivacyHub-Android-Preview/releases/tag/v0.10.6-beta)
+- SHA-256：`8F3A305595235EF9ED495F333DC6FE21BDDBB5B289C06AA9927B8A101A8985F67`
 - 构建启用 R8 混淆、压缩及资源收缩，非 debuggable；不公开源码或 mapping 文件。混淆不等于加密，也不保证不可逆向。
 
 ## APK 元数据
@@ -19,12 +19,19 @@
 | 项目 | 核对值 |
 | --- | --- |
 | packageName | `com.privacyhub` |
-| versionName | `0.10.5-beta` |
-| versionCode | `133` |
+| versionName | `0.10.6-beta` |
+| versionCode | `134` |
 | minSdk | `26`（Android 8.0 / API 26+） |
 | targetSdk | `35` |
 | debuggable | `false` |
 | allowBackup | `false` |
+
+## Release 验证
+
+- macOS Release 检查：Debug / Release JVM 测试各 276/276；Lint 均 0 errors（33 / 34 warnings）。
+- 隔离 API 35 模拟器 instrumentation：49/49；仅在测试模拟器上授予 `POST_NOTIFICATIONS`。
+- 使用合成条目验证 0.10.5-beta Release 覆盖升级，保存内容仍可读取；未使用真实用户数据或实体设备。
+- 未运行实体设备、多 ROM 与第三方 App 全量兼容矩阵。
 
 ## 签名证书
 
@@ -64,11 +71,11 @@ APK 还声明了由 Android 系统绑定的 Quick Settings Tile、Autofill 和�
 安装 Android SDK Build Tools 与 Command-line Tools 后，可以执行：
 
 ```powershell
-Get-FileHash .\PrivacyHub-0.10.5-beta.apk -Algorithm SHA256
-aapt2 dump permissions .\PrivacyHub-0.10.5-beta.apk
-apksigner verify --verbose --print-certs .\PrivacyHub-0.10.5-beta.apk
-apkanalyzer manifest print .\PrivacyHub-0.10.5-beta.apk
-apkanalyzer manifest debuggable .\PrivacyHub-0.10.5-beta.apk
+Get-FileHash .\PrivacyHub-0.10.6-beta.apk -Algorithm SHA256
+aapt2 dump permissions .\PrivacyHub-0.10.6-beta.apk
+apksigner verify --verbose --print-certs .\PrivacyHub-0.10.6-beta.apk
+apkanalyzer manifest print .\PrivacyHub-0.10.6-beta.apk
+apkanalyzer manifest debuggable .\PrivacyHub-0.10.6-beta.apk
 ```
 
 核对重点：

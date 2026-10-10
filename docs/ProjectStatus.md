@@ -1,8 +1,17 @@
 # 隐私中转站公开进度
 
-> 核对日期：2026-09-30
+> 核对日期：2026-10-10
 >
-> 当前公开版本：`0.10.5-beta` / versionCode `133`，状态：Beta
+> 当前公开版本：`0.10.6-beta` / versionCode `134`，状态：Beta
+
+## 0.10.6-beta 链接识别与可靠性加固
+
+- 链接提取保留 URL 内合法配对的末尾括号并清理外包标点；支持 ASCII 混合大小写 HTTP(S)，只规范化协议头，拒绝 Unicode 近似字符。百分号转义路径参数保持不变。
+- 加固分类别名自动保存与恢复失败处理；单条备份文本超过既有限制时拒绝而不截断。
+- Debug / Release JVM 各 276/276，Debug / Release Lint 均 0 errors；隔离 API 35 AVD instrumentation 49/49（授予测试所需通知权限后）。
+- 在隔离 API 35 AVD 上用合成条目验证 0.10.5-beta → 0.10.6-beta Release 覆盖升级后数据仍可读；未使用真实用户数据或实体设备。
+- Room schema v9、Backup payload v5；未新增 INTERNET、ACCESS_NETWORK_STATE 或 QUERY_ALL_PACKAGES。正式证书沿用，APK SHA-256 和权限核验见 [安全与构建证据](SecurityEvidence.md)。
+- 对应的 Source Available 快照同步发布在独立的 [PrivacyHub-Android-Source](https://github.com/hzy7003-bit/PrivacyHub-Android-Source/releases/tag/v0.10.6-beta) 仓库。
 
 ## 0.10.5-beta 安全与可靠性加固
 
@@ -10,7 +19,7 @@
 - 加强备份/恢复隔离、分类跨存储失败恢复和设置异步渲染稳定性。设置页回归在 Release → Release 验证中被发现并修复后，完整 API 35 instrumentation 通过 39/39。
 - Debug / Release JVM 各 255/255；Debug / Release Lint 均 0 errors。0.10.4-beta → 0.10.5-beta Release 覆盖升级后，安全箱内容、分类、Home tag 和设置值均保留。
 - Room schema v9、Backup payload v5；未新增 INTERNET、ACCESS_NETWORK_STATE 或 QUERY_ALL_PACKAGES。
-- 当前最新经过审计的 Source Available 快照仍为 0.10.4-beta；0.10.5-beta 源码快照将在独立审计后发布。
+- 0.10.5-beta 的 Source Available 快照随后独立审计并发布；当前最新快照为 0.10.6-beta。
 
 ## 0.10.4-beta 身份边界与备份保护
 

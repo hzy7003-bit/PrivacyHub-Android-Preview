@@ -1,5 +1,14 @@
 # 更新日志
 
+## v0.10.6-beta — 2026-10-10
+
+- 链接解析保留合法配对的末尾括号，清理外部标点；识别 ASCII 大小写混合 HTTP(S)，仅规范化协议头并拒绝 Unicode 近似协议。
+- URL 清理保留路径参数中的百分号转义，维持淘宝跳转回归覆盖。
+- 加固分类别名自动保存与恢复失败处理；超出单条备份上限的文本 fail-closed，不截断。
+- Room schema 仍为 v9、Backup payload 仍为 v5；未新增 INTERNET、ACCESS_NETWORK_STATE 或 QUERY_ALL_PACKAGES。
+- macOS Release 检查通过；Debug 与 Release JVM 测试各 276/276，Lint 无错误，隔离 API 35 模拟器 instrumentation 49/49。
+- APK 哈希、正式签名、权限和元数据见 [安全与构建证据](docs/SecurityEvidence.md)。
+
 ## v0.10.5-beta — 2026-09-30
 
 - 收紧网盘无障碍自动填码边界，只在明确支持的浏览器、host 和提取码输入框中执行，不自动确认或提交。
